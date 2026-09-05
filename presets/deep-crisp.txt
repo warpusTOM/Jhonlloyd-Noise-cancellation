@@ -1,0 +1,17 @@
+# Global Capture Processing for Microphone
+Stage: capture
+
+# Prevent digital clipping at 100% Windows volume so RNNoise doesn't cut or disperse audio
+Preamp: -3 dB
+
+# Sub-rumble high-pass (45 Hz) - preserves deep voice fundamentals while removing floor/desk vibrations
+Filter: ON HP Fc 45 Hz Q 0.7
+
+# Deep Voice Enhancement (Chest resonance & radio-broadcast warmth at 120 Hz)
+Filter: ON PK Fc 120 Hz Gain 3.5 dB Q 1.0
+
+# Real-time Neural Network Noise Suppression (Xiph RNNoise v0.2)
+VSTPlugin: Library "C:\Program Files\EqualizerAPO\VSTPlugins\rnnoise_mono.dll"
+
+# Studio Air & Crispness (High Shelf at 10 kHz for articulation)
+Filter: ON HighShelf Fc 10000 Hz Gain 2.0 dB Q 0.7

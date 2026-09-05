@@ -1,0 +1,15 @@
+# Build artifacts and temp files
+*.tmp
+*.log
+*.obj
+*.pdb
+obj/
+bin/Debug/
+bin/Release/
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+Thumbs.db
+Desktop.ini
